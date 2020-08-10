@@ -1,0 +1,24 @@
+version: "3"
+services:
+  qlds:
+    image: internetaddict/qlds:alpha
+    restart: on-failure
+    environment:
+      SERVER_MAXCLIENTS: 12
+      SERVER_NAME: "My QLDS dockerized server"
+      # map pool/mapcycle file
+      # Built in map pools: mappool.txt, mappool_ca.txt, mappool_ctf.txt, mappool_duel.txt,
+      # mappool_ffa.txt, mappool_race.txt, mappool_tdm.txt
+      SERVER_MAPPOOL: "mappool_ffa.txt"
+      SERVER_PASS: "qlds123"
+      RCON_PASS: "qlds123"
+      STATS_PASS: "qlds123"
+      # put your steam_id here
+      ADMIN_STEAMID: "76561198072786081"
+      RESTART_ON_FAIL: "yes"
+    ports:
+      # SERVER PORT
+      - "27960:27960/udp"
+      # RCON PORT
+      - "28960:28960"
+
