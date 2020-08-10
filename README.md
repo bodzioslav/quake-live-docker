@@ -2,10 +2,15 @@
 
 ## Start the server
 
-# Edit docker-compose.yml file and do the following:
+#### Edit docker-compose.yml file and do the following:
 
 ```bash
 docker-compose up -d 
+```
+
+## Stop the server
+
+```bash
 docker-compose down
 ```
 
